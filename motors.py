@@ -16,10 +16,10 @@ class Motors(Pins):
         self.__speed = value
 
     def moveForward(self, pin1, speed):
-        #Move motors forward
+        gpio.setup(pin1, gpio.OUT)
+        gpio.PWM(pin1, speed)
 
     def moveBackwards(self, pin2, speed):
         #Move motor backwards
 
-    def stopMotor(self, pin1, 0):
-        #stop
+
