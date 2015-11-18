@@ -41,8 +41,17 @@ class Pins:
     def RightUSEcho(self):
         return self.__rightUSEcho
 
-    def setup(self):
-        gpio.setmode(gpio.BOARD)
+    def setup(self, LeftUSTrig, RightUSTrig, LeftUSEcho, RightUSEcho):
+        #In: Trig
+        #Out: Echo, motors
+        inPins = [LeftUSTrig, RightUSTrig]
+        outPins = [LeftUSEcho, RightUSEcho]
+        GPIO.setmode(gpio.BOARD)
+        for i in inPins:
+            GPIO.setup(i, gpio.IN)
+        for j in outPins:
+            GPIO.setup(j, gpio.OUT)
+
 
 
 
