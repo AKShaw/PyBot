@@ -1,23 +1,49 @@
 class Pins:
-    def __init__(self, pin1, pin2):
-        self.__pin1 = pin1
-        self.__pin2 = pin2
+    def __init__(self, leftMF, leftMB, rightMF, rightMB, leftUSTrig, leftUSEcho, rightUSTrig, rightUSEcho):
+        self.__leftMF = leftMF
+        self.__leftMB = leftMB
+        self.__rightMF = rightMF
+        self.__rightMB = rightMB
+        self.__leftUSTrig = leftUSTrig
+        self.__leftUSEcho = leftUSEcho
+        self.__rightUSTrig = rightUSTrig
+        self.__rightUSEcho = rightUSEcho
 
     @property
-    def Pin1(self):
-        return self.__pin1
-
-    @Pin1.setter
-    def Pin1(self, value):
-        self.__pin1 = value
+    def LeftMF(self):
+        return self.__leftMF
 
     @property
-    def Pin2(self):
-        return self.__pin2
+    def LeftMB(self):
+        return self.__leftMB
 
-    @Pin2.setter
-    def Pin2(self, value):
-        self.__pin2 = value
+    @property
+    def RightMF(self):
+        return self.__rightMF
+
+    @property
+    def RightMB(self):
+        return self.__rightMB
+
+    @property
+    def LeftUSTrig(self):
+        return self.__leftUSTrig
+
+    @property
+    def LeftUSEcho(self):
+        return self.__leftUSEcho
+
+    @property
+    def RightUSTrig(self):
+        return self.__rightUSTrig
+
+    @property
+    def RightUSEcho(self):
+        return self.__rightUSEcho
+
+    def setup(self):
+        gpio.setmode(gpio.BOARD)
+
 
 
 
