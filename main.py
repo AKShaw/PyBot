@@ -25,3 +25,8 @@ def US(Trig, Echo):
     distance = pulse_duration * 17150
 
     return round(distance, 2)
+
+
+while True:
+    print ("Left: " + str(US(p.LeftUSTrig, p.LeftUSEcho)))
+    print ("Right: " + str(US(p.RightUSTrig, p.RightUSEcho)))
