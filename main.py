@@ -2,7 +2,8 @@ import RPi.GPIO as GPIO
 from pins import Pins
 import time
 
-p = Pins(0, 0, 0, 0, 21, 20, 38, 40)
+
+p = Pins(0, 0, 0, 0, 21, 20, 40, 38)
 p.setup(p.LeftUSTrig, p.RightUSTrig, p.LeftUSEcho, p.RightUSEcho)
 
 def US(Trig, Echo):
