@@ -1,3 +1,5 @@
+import RPi.GPIO as GPIO
+
 class Pins:
     def __init__(self, leftMF, leftMB, rightMF, rightMB, leftUSTrig, leftUSEcho, rightUSTrig, rightUSEcho):
         self.__leftMF = leftMF
@@ -46,11 +48,11 @@ class Pins:
         #Out: Echo, motors
         inPins = [LeftUSTrig, RightUSTrig]
         outPins = [LeftUSEcho, RightUSEcho]
-        GPIO.setmode(gpio.BOARD)
+        GPIO.setmode(GPIO.BOARD)
         for i in inPins:
-            GPIO.setup(i, gpio.IN)
+            GPIO.setup(i, GPIO.IN)
         for j in outPins:
-            GPIO.setup(j, gpio.OUT)
+            GPIO.setup(j, GPIO.OUT)
 
 
 
