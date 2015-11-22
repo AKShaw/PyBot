@@ -19,30 +19,30 @@ class Pins(object):
         for j in outPins:
             GPIO.setup(j, GPIO.OUT)"""
 
-    def setp(self, pin_in, pin_out):
+    def pin_setup(self, pin_in, pin_out):
         gpio.setmode(gpio.BOARD)
         gpio.setup(pin_in, gpio.IN)
         gpio.setup(pin_out, gpio.OUT)
         return
 
 class UltraSonic(Pins):
-	def __init__(self, __trig, __echo, offset):
-		self.offset = offset
-		super(UltraSonic, self).__init__(__trig, __echo)
+    def __init__(self, offset, trig, echo):
+        self.offset = offset
+        super(UltraSonic, self).__init__(trig, echo)
 
-	def US(self):
+    def sensor_detect(self):
         gpio.output(self.pin_in, True)
-		time.sleep(0.00001)
-		gpio.output(self.pin_in, False)
+        time.sleep(0.00001)
+        gpio.output(self.pin_in, False)
 
-		while gpio.input(self.pin_out) == 0:
+        while gpio.input(self.pin_out) == 0:
             pulse_start = time.time()
 
-		while gpio.input(self.pin) == 1:
+        while gpio.input(self.pin_out) == 1:
             pulse_end = time.time()
 
-		pulse_duration = pulse_end - pulse_start
+        pulse_duration = pulse_end - pulse_start
 
-		distance = pulse_duration * 17150
+        distance = pulse_duration * 17150
 
-		return round(distance, 2)
+        return round(distance, 2)
