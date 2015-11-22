@@ -7,7 +7,6 @@ import time
 class Pins(object):
     def __init__(self, IO_pins, type):
         self.IO_pins = IO_pins
-        gpio.setmode(gpio.BOARD)
         if (type=="sensor"):
             gpio.setup(self.IO_pins[0], gpio.IN)  # io_pins[0] referring to the first value of the tuple e.g. pin 21 (trig)
             gpio.setup(self.IO_pins[1], gpio.OUT)  # io_pins[1] reffering to the next value we entered e.g. pin 22 (echo)
@@ -41,6 +40,8 @@ class UltraSonic(Pins):
 """this example below is what it would appear like in a main class being called etc.
 remember that we can create as many instances of the classes as we fuckin like so we dont need
 to make shitty variables for each pin kek"""
+
+gpio.setmode(gpio.BOARD)
 
 right_sensor = UltraSonic((21, 20))
 left_sensor = UltraSonic((40, 38))
