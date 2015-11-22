@@ -18,6 +18,9 @@ class Pins(object):
             GPIO.setup(i, GPIO.IN)
         for j in outPins:
             GPIO.setup(j, GPIO.OUT)"""
+    #the stuff ive commented out above wont work in a class. it might be useful to setup the whole
+    #board in the main class when we want everything set up.
+    #so we really only need this stuff below rn. maybe im wrong idfk lel
 
     def pin_setup(self, pin_in, pin_out):
         gpio.setmode(gpio.BOARD)
