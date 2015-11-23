@@ -42,6 +42,7 @@ right_sensor = UltraSonic((21,20))
 left_sensor = UltraSonic((38,40))
 
 #loop x amount
+Pins.pin_setup()
 print(right_sensor.sensor_detect()) #this would give me the distance for right sensor.
 print(left_sensor.sensor_detect()) #this would give me the distance for left sensor
 
