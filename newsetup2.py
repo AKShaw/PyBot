@@ -34,10 +34,6 @@ class UltraSonic(Pins):
 
         return round(distance, 2)
 
-"""this example below is what it would appear like in a main class being called etc.
-remember that we can create as many instances of the classes as we fuckin like so we dont need
-to make shitty variables for each pin kek"""
-
 right_sensor = UltraSonic((21,20))
 left_sensor = UltraSonic((38,40))
 
