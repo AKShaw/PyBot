@@ -34,11 +34,11 @@ to make shitty variables for each pin kek"""
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((21, 20))
+#right_sensor = UltraSonic((21, 20))
 left_sensor = UltraSonic((38, 40))
 
 # loop x amount
-print(right_sensor.sensor_detect())  # this would give me the distance for right sensor.
+#print(right_sensor.sensor_detect())  # this would give me the distance for right sensor.
 print(left_sensor.sensor_detect())  # this would give me the distance for left sensor
 
 # this is where we can repeat these and collect the statistics in an array or something
