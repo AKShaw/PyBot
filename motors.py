@@ -1,9 +1,10 @@
 from pins import Pins
+import RPi.GPIO as gpio
 #PIN1 = FORWARD
 #PIN2 = BACKWARD
 
 class Motors(Pins):
-    def __init__(self, speed, pin1, pin2):
+    def __init__(self, seed, pin1, pin2):
         super().__init__(pin1, pin2)
         self.__speed = speed
 
