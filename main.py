@@ -1,5 +1,6 @@
 import RPi.GPIO as gpio
 from ussensor import UltraSonic
+import time
 
 gpio.setmode(gpio.BOARD)
 
