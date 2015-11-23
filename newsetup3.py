@@ -13,8 +13,8 @@ class Pins(object):
 
 
 class UltraSonic(Pins):
-    def __init__(self, pins):
-        super().__init__(pins, "sensor")
+    def __init__(self, pins, type):
+        super().__init__(pins, type)
 
     def sensor_detect(self):
         gpio.output(self.IO_pins[0], True)
@@ -39,8 +39,8 @@ to make shitty variables for each pin kek"""
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((21, 20))
-left_sensor = UltraSonic((40, 38))
+right_sensor = UltraSonic((21, 20), "sensor")
+left_sensor = UltraSonic((38, 40), "sensor")
 
 # loop x amount
 print(right_sensor.sensor_detect())  # this would give me the distance for right sensor.
