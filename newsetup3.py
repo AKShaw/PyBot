@@ -39,12 +39,16 @@ to make shitty variables for each pin kek"""
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((21, 20), "sensor")
-left_sensor = UltraSonic((38, 40), "sensor")
+right_sensor = UltraSonic((37, 35), "sensor")     #37 is echo (in), 35 is trig (out)
+left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out)
 
 # loop x amount
-print(right_sensor.sensor_detect())  # this would give me the distance for right sensor.
-print(left_sensor.sensor_detect())  # this would give me the distance for left sensor
+while True:
+    print(left_sensor.sensor_detect())
+    print(right_sensor.sensor_detect())  # this would give me the distance for right sensor
+    time.sleep(1)# this would give me the distance for left sensor
 
 # this is where we can repeat these and collect the statistics in an array or something
 # have them interact with the algorithms class, finding out what we need to do for the motors.
+
+gpio.cleanup()
