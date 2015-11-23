@@ -8,8 +8,8 @@ class Pins(object):
 
     def pin_setup(self):
         gpio.setmode(gpio.BOARD)
-        gpio.setup(self.IO_pins[0], gpio.IN)    #io_pins[0] referring to the first value of the tuple e.g. pin 21 (trig)
-        gpio.setup(self.IO_pins[1], gpio.OUT)   #io_pins[1] reffering to the next value we entered e.g. pin 22 (echo)
+        gpio.setup(self.IO_pins[1], gpio.IN)    #io_pins[0] referring to the first value of the tuple e.g. pin 21 (trig)
+        gpio.setup(self.IO_pins[0], gpio.OUT)   #io_pins[1] reffering to the next value we entered e.g. pin 22 (echo)
                                                 #this condences code a lot and its much simpler
         return
 
@@ -39,7 +39,7 @@ remember that we can create as many instances of the classes as we fuckin like s
 to make shitty variables for each pin kek"""
 
 right_sensor = UltraSonic((21,20))
-left_sensor = UltraSonic((40,38))
+left_sensor = UltraSonic((38,40))
 
 #loop x amount
 print(right_sensor.sensor_detect()) #this would give me the distance for right sensor.
