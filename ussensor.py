@@ -1,42 +1,24 @@
 from pins import Pins
 from time import *
-import RPi GPIO as GPIO
+import RPi.GPIO as GPIO
 
 class UltraSonic(Pins):
-	def __init__(self, trig, echo):
-		super().__init__(trig, echo)
-		self.__trig = trig
-		self.__echo = echo
+    def __init__(self, pins, type):
+        super().__init__(pins, type)
 
-	@property
-	def trig(self):
-	    return self.__trig
+    def sensor_detect(self):
+        gpio.output(self.IO_pins[1], True)
+        time.sleep(0.00001)
+        gpio.output(self.IO_pins[1], False)
 
-    @trig.setter
-    def trig(self, value):
-    	self.__trig = value
+        while gpio.input(self.IO_pins[0]) == 0:
+            pulse_start = time.time()
 
-    @property
-    def echo(self):
-        return self.__echo
+        while gpio.input(self.IO_pins[0]) == 1:
+            pulse_end = time.time()
 
-    @echo.setter
-    def echo(self, value):
-    	self.__echo = value
+        pulse_duration = pulse_end - pulse_start
 
-	def US(self, trig, echo):
-        GPIO.output(trig, True)
-		time.sleep(0.00001)
-		GPIO.output(trig, False)
+        distance = pulse_duration * 17150
 
-		while GPIO.input(echo)==0:
-		  pulse_start = time.time()
-
-		while GPIO.input(echo)==1:
-		  pulse_end = time.time()
-
-		pulse_duration = pulse_end - pulse_start
-
-		distance = pulse_duration * 17150
-
-		return round(distance, 2)
+        return round(distance, 2)
