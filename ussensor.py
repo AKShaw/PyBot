@@ -1,6 +1,6 @@
 from pins import Pins
 from time import *
-import RPi.GPIO as GPIO
+import RPi.GPIO as gpio
 
 class UltraSonic(Pins):
     def __init__(self, pins, type):
