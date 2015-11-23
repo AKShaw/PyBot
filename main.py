@@ -1,33 +1,18 @@
-import RPi.GPIO as GPIO
-from pins import Pins
-import time
+import RPi.GPIO as gpio
+from ussensor import UltraSonic
 
+gpio.setmode(gpio.BOARD)
 
-p = Pins(0, 0, 0, 0, 21, 20, 38, 40)
-p.setup(p.LeftUSTrig, p.RightUSTrig, p.LeftUSEcho, p.RightUSEcho)
+right_sensor = UltraSonic((37, 35), "sensor")     #37 is echo (in), 35 is trig (out)
+left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out)
 
-def US(Trig, Echo):
-    GPIO.output(Trig, False)
-    #print "Waiting For Sensor To Settle"
-    time.sleep(0.5)
-
-    GPIO.output(Trig, True)
-    time.sleep(0.00001)
-    GPIO.output(Trig, False)
-
-    while GPIO.input(Echo)==0:
-      pulse_start = time.time()
-
-    while GPIO.input(Echo)==1:
-      pulse_end = time.time()
-
-    pulse_duration = pulse_end - pulse_start
-
-    distance = pulse_duration * 17150
-
-    return round(distance, 2)
-
-
+# loop x amount
 while True:
-    print ("Left: " + str(US(p.LeftUSTrig, p.LeftUSEcho)))
-    print ("Right: " + str(US(p.RightUSTrig, p.RightUSEcho)))
+    print("Left:" + str(left_sensor.sensor_detect()))
+    print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
+    time.sleep(1)# this would give me the distance for left sensor
+
+# this is where we can repeat these and collect the statistics in an array or something
+# have them interact with the algorithms class, finding out what we need to do for the motors.
+
+gpio.cleanup()
