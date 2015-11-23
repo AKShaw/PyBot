@@ -44,8 +44,8 @@ left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out
 
 # loop x amount
 while True:
-    print(left_sensor.sensor_detect())
-    print(right_sensor.sensor_detect())  # this would give me the distance for right sensor
+    print("Left:" + str(left_sensor.sensor_detect()))
+    print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
     time.sleep(1)# this would give me the distance for left sensor
 
 # this is where we can repeat these and collect the statistics in an array or something
