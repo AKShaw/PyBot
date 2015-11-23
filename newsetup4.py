@@ -34,8 +34,8 @@ to make shitty variables for each pin kek"""
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((37, 35))
-left_sensor = UltraSonic((38, 40))
+right_sensor = UltraSonic((37, 35))     #37 is echo (in), 35 is trig (out)
+left_sensor = UltraSonic((38, 40))      #38 is echo (in), 40 trig (out)
 
 # loop x amount
 while True:
