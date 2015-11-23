@@ -1,9 +1,6 @@
 import RPi.GPIO as gpio
 import time
 
-"""REVISION 1.1 - INDIVIDUAL PIN VARIABLES HAVE BEEN MODIFIED INTO A TUPLE"""
-
-
 class Pins(object):
     def __init__(self, IO_pins, type):
         self.IO_pins = IO_pins
@@ -11,13 +8,13 @@ class Pins(object):
             gpio.setup(self.IO_pins[0], gpio.IN)  # io_pins[0] referring to the first value of the tuple e.g. pin 21 (trig)
             gpio.setup(self.IO_pins[1], gpio.OUT)  # io_pins[1] reffering to the next value we entered e.g. pin 22 (echo)
         elif (type=="motor"):
-            gpio.setup(self.IO_pins[0], gpio.OUT)  # io_pins[0] referring to the first value of the tuple e.g. pin 21 (trig)
-            gpio.setup(self.IO_pins[1], gpio.OUT)  # io_pins[1] reffering to the next value we entered e.g. pin 22 (echo)
+            gpio.setup(self.IO_pins[0], gpio.OUT)
+            gpio.setup(self.IO_pins[1], gpio.OUT)
 
 
 class UltraSonic(Pins):
     def __init__(self, pins):
-        super(UltraSonic, self).__init__(pins, "sensor")
+        super().__init__(pins, "sensor")
 
     def sensor_detect(self):
         gpio.output(self.IO_pins[0], True)
@@ -35,7 +32,6 @@ class UltraSonic(Pins):
         distance = pulse_duration * 17150
 
         return round(distance, 2)
-
 
 """this example below is what it would appear like in a main class being called etc.
 remember that we can create as many instances of the classes as we fuckin like so we dont need
