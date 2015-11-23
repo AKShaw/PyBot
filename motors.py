@@ -4,23 +4,22 @@ import RPi.GPIO as gpio
 #PIN2 = BACKWARD
 
 class Motors(Pins):
-    def __init__(self, seed, pin1, pin2):
-        super().__init__(pin1, pin2)
+    def __init__(self, pins):
+        super().__init__(pins, "motor")
         self.__speed = speed
+        motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
+        motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
+        motorForwardsPWM.start(0)
+        motorBackwardsPWM.start(0)
 
-    @property
-    def Speed(self):
-        return self.__speed
+    def moveForward(self, speed):
+        motorForwardsPWM.ChangeDutyCycle(speed)
+        motorBackwardsPWM.ChangeDutyCycle(0)
 
-    @Speed.setter
-    def Speed(self, value):
-        self.__speed = value
 
-    def moveForward(self, pin1, speed):
-        gpio.setup(pin1, gpio.OUT)
-        gpio.PWM(pin1, speed)
+    def moveBackwards(self,speed):
+        motorBackwardsPWM.ChangeDutyCycle(speed)
+        motorForwardPWM.ChangeDutyCycle(0)
 
-    def moveBackwards(self, pin2, speed):
-        #Move motor backwards
 
 
