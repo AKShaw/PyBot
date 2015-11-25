@@ -5,6 +5,7 @@ class check_sensors():
         #sensor_distance[1] = left sensor distance
         #sensor_distance[2] = center sensor distance
 
+
     """def check_front(self):
         if (self.sensor_distance[0] or self.sensor_distance[1]) < 0.15:
             return "BAD"     #not sure of BAD45, as i may implement it to do the calibration for all instances of 'BAD'
