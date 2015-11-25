@@ -19,10 +19,8 @@ print (leftMotor)
 rightMotor = Motor((21,19))
 print (rightMotor)
 
-while True:
-    leftMotor.moveForward(100)
-    rightMotor.moveForward(100)
-
+rightMotor.moveForward(100)
+leftMotor.moveForward(100)
 
 # this is where we can repeat these and collect the statistics in an array or something
 # have them interact with the algorithms class, finding out what we need to do for the motors.
