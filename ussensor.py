@@ -1,5 +1,5 @@
 from pins import Pins
-from time import *
+import time
 import RPi.GPIO as gpio
 
 class UltraSonic(Pins):
