@@ -5,8 +5,8 @@ import time
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((37, 35), "sensor")     #37 is echo (in), 35 is trig (out)
-left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out)
+#right_sensor = UltraSonic((37, 35), "sensor")     #37 is echo (in), 35 is trig (out)
+#left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out)
 
 # loop x amount
 """while True:
@@ -14,18 +14,18 @@ left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out
     print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
     time.sleep(1)# this would give me the distance for left sensor"""
 
-"""leftMotor = Motor((24,26))
+leftMotor = Motor((24,26))
 print (leftMotor)
 rightMotor = Motor((21,19))
 print (rightMotor)
 
 while True:
     rightMotor.moveForward(100)
-    leftMotor.moveForward(100)"""
+    leftMotor.moveForward(100)
 
 # this is where we can repeat these and collect the statistics in an array or something
 # have them interact with the algorithms class, finding out what we need to do for the motors.
-right_list = []
+"""right_list = []
 left_list = []
 for i in range(0, 9):
     right_distance = right_sensor.sensor_detect()
@@ -36,5 +36,5 @@ for i in range(0, 9):
 t = tuple(right_list)
 t1 = tuple(left_list)
 print(t)
-print(t1)
+print(t1)"""
 gpio.cleanup()
