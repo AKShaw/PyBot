@@ -14,10 +14,10 @@ gpio.setmode(gpio.BOARD)
     print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
     time.sleep(1)# this would give me the distance for left sensor"""
 
-leftMotor = Motor((24,26))
-print (leftMotor)
-rightMotor = Motor((21,19))
+rightMotor = Motor((26,24))
 print (rightMotor)
+leftMotor = Motor((21,19))
+print (leftMotor)
 
 while True:
     #rightMotor.moveForward(100)
