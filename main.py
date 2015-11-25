@@ -14,14 +14,14 @@ gpio.setmode(gpio.BOARD)
     print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
     time.sleep(1)# this would give me the distance for left sensor"""
 
-rightMotor = Motor((26,24))
+rightMotor = Motor((24,26))
 print (rightMotor)
 leftMotor = Motor((21,19))
 print (leftMotor)
 
 while True:
     rightMotor.moveForward(100)
-    #leftMotor.moveForward(100)
+    leftMotor.moveForward(100)
 
 # this is where we can repeat these and collect the statistics in an array or something
 # have them interact with the algorithms class, finding out what we need to do for the motors.
