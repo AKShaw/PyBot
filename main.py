@@ -15,11 +15,13 @@ gpio.setmode(gpio.BOARD)
     time.sleep(1)# this would give me the distance for left sensor"""
 
 leftMotor = Motor((24,26))
+print (leftMotor)
 rightMotor = Motor((19,21))
+print (rightMotor)
 
 while True:
-    leftMotor.moveForward(20)
-    rightMotor.moveForward(20)
+    leftMotor.moveForward(1000)
+    rightMotor.moveForward(1000)
 
 
 # this is where we can repeat these and collect the statistics in an array or something

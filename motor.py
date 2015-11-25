@@ -14,11 +14,13 @@ class Motor(Pins):
         motorBackwardsPWM.start(0)
 
     def moveForward(self, speed):
+        print ("Moving forwards")
         motorForwardsPWM.ChangeDutyCycle(speed)
         motorBackwardsPWM.ChangeDutyCycle(0)
 
 
     def moveBackwards(self,speed):
+        print ("Moving backwards")
         motorBackwardsPWM.ChangeDutyCycle(speed)
         motorForwardsPWM.ChangeDutyCycle(0)
 
