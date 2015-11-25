@@ -20,7 +20,7 @@ rightMotor = Motor((21,19))
 print (rightMotor)
 
 while True:
-    rightMotor.moveForward(100)
+    #rightMotor.moveForward(100)
     leftMotor.moveForward(100)
 
 # this is where we can repeat these and collect the statistics in an array or something
