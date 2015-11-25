@@ -21,7 +21,7 @@ print (rightMotor)
 
 while True:
     leftMotor.moveForward(100)
-    rightMotor.moveForward(100)
+    #rightMotor.moveForward(100)
 
 
 # this is where we can repeat these and collect the statistics in an array or something
