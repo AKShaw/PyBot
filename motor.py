@@ -15,6 +15,7 @@ class Motor(Pins):
 
     def moveForward(self, speed):
         print ("Moving forwards")
+        print("DEBUG: pf = "+str(self.IO_pins[0])+" pb= "+str(self.IO_pins[1]))
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
 
