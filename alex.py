@@ -4,6 +4,8 @@ from algorithms import *
 from motor import Motor
 import time
 
+gpio.setmode(gpio.BOARD)
+
 
 rightMotor = Motor((24,26))
 print (rightMotor)
