@@ -7,11 +7,11 @@ import time
 gpio.setmode(gpio.BOARD)
 
 
-rightMotor = Motor((24,26))
+rightMotor = Motor((24,26), "motor")
 print (rightMotor)
-leftMotor = Motor((21,19))
+leftMotor = Motor((21,19), "motor")
 print (leftMotor)
 
 while True:
     rightMotor.moveForward(100)
-    leftMotor.moveForward(100)
+    leftMotor.moveForward2(100)
