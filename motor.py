@@ -15,14 +15,15 @@ class Motor(Pins):
 
     def moveForward(self, speed):
         print ("Moving forwards")
-        motorBackwardsPWM.ChangeDutyCycle(speed)
-        motorForwardsPWM.ChangeDutyCycle(0)
+        print("DEBUG: pf = "+str(self.IO_pins[0])+" pb= "+str(self.IO_pins[1]))
+        motorBackwardsPWM.ChangeDutyCycle(0)
+        motorForwardsPWM.ChangeDutyCycle(speed)
 
 
     def moveBackwards(self,speed):
         print ("Moving backwards")
-        motorForwardsPWM.ChangeDutyCycle(speed)
-        motorBackwardsPWM.ChangeDutyCycle(0)
+        motorForwardsPWM.ChangeDutyCycle(0)
+        motorBackwardsPWM.ChangeDutyCycle(speed)
 
 
 
