@@ -60,10 +60,10 @@ lmb = 21
 rmf = 26
 rmb = 24
 sonar = 8
-trigL = 38
-echoL = 36
-trigR = 37
-echoR = 35
+trigL = 37
+echoL = 35
+trigR = 40
+echoR = 38
 
 startMotor(lmf, lmb, rmf, rmb)  # runs setup for all the motor pins
 #Wheels
