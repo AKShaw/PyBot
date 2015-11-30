@@ -16,7 +16,7 @@ begin_left_distance = left_sensor.sensor_detect()
 begin_center_distance = center_sensor.sensor_detect()
 
 output_distances = check_sensors((begin_right_distance, begin_left_distance, begin_center_distance))
-state = output_distances.check_start
+state = output_distances.check_start()
 #the return from this method will determine the first move of the robot.
 #the state will be checked in this package. The method of movement is done in algorithms
 
