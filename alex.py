@@ -14,4 +14,4 @@ print (leftMotor)
 
 while True:
     rightMotor.moveForward(100)
-    leftMotor.moveForward2(100)
+    leftMotor.moveForward(100)
