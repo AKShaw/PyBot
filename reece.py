@@ -54,7 +54,7 @@ def startMotor(lmf, lmb, rmf, rmb): # sets up all the motor pins
 
 gpio.setmode(gpio.BOARD)    # sets what board type we will use
 
-# all the pins we will use
+
 lmf = 19
 lmb = 21
 rmf = 26
