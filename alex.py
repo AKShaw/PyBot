@@ -11,7 +11,7 @@ leftMotor = Motor((26, 24))
 rightMotor = Motor((19, 21))
 
 while True:
-    leftMotor.moveForward(100)
+    rightMotor.moveForward(100)
 
 
 gpio.cleanup()
