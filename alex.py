@@ -8,7 +8,7 @@ gpio.setmode(gpio.BOARD)
 
 
 leftMotor = Motor((26, 24))
-#rightMotor = Motor((19, 21))
+rightMotor = Motor((19, 21))
 
 while True:
     leftMotor.moveForward(100)
