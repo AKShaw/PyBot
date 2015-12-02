@@ -20,7 +20,7 @@ class Motor(Pins):
     def moveBackwards(self):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
-        motorBackwardsPWM.ChangeDutyCycle(100)
+        motorBackwardsPWM.ChangeDutyCycle(100) #ijii
 
 """class Motor(Pins):
     def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
