@@ -13,14 +13,14 @@ class Motor(Pins):
         motorForwardsPWM.start(0)
         motorBackwardsPWM.start(0)
 
-    def moveForward(self):
+    def moveForward(self, speed):
         motorBackwardsPWM.ChangeDutyCycle(0)
-        motorForwardsPWM.ChangeDutyCycle(100)
+        motorForwardsPWM.ChangeDutyCycle(speed)
 
-    def moveBackwards(self):
+    def moveBackwards(self, speed):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
-        motorBackwardsPWM.ChangeDutyCycle(100) #ijii
+        motorBackwardsPWM.ChangeDutyCycle(speed) #ijii
 
 """class Motor(Pins):
     def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
