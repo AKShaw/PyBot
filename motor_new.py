@@ -8,9 +8,6 @@ class Motor(Pins):
         super().__init__(pins, type)
         global motorForwardsPWM
         global motorBackwardsPWM
-        gpio.setup(self.IO_pins[0], gpio.OUT)
-        gpio.setup(self.IO_pins[1], gpio.OUT)
-
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
         motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
         motorForwardsPWM.start(0)
