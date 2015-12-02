@@ -5,8 +5,8 @@ import RPi.GPIO as gpio
 
 class Motor(Pins):#
     def __init__(self, pins, pin_type):
-        super(Motor, self).__init__(pins, pin_type)
-        u"""global motorForwardsPWM
+        super().__init__(pins, pin_type)
+        """global motorForwardsPWM
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
         print("set")
         global motorBackwardsPWM
@@ -20,29 +20,29 @@ class Motor(Pins):#
         motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
         motorForwardsPWM.start(0)
         motorBackwardsPWM.start(0)
-        print u"start motor fowards"
-        print self.IO_pins[0], self.IO_pins[1]
+        print("start motor fowards")
+        print(self.IO_pins[0], self.IO_pins[1])
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
-        print u"should have started"
+        print("should have started")
 
     def moveRightForward(self, speed):
         motorForwardsPWM = gpio.PWM(self.IO_pins[2], 100)
         motorBackwardsPWM = gpio.PWM(self.IO_pins[3], 100)
         motorForwardsPWM.start(0)
         motorBackwardsPWM.start(0)
-        print u"start motor fowards"
-        print self.IO_pins[0], self.IO_pins[1]
+        print("start motor fowards")
+        print(self.IO_pins[0], self.IO_pins[1])
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
-        print u"should have started"
+        print("should have started")
 
-    u"""def moveBackwards(self, speed):
+    """def moveBackwards(self, speed):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
         motorBackwardsPWM.ChangeDutyCycle(speed)"""
 
-u"""class Motor(Pins):
+"""class Motor(Pins):
     def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
         super().__init__(pins, type)
         self.motorForwardsPWM = motorForwardsPWM
@@ -62,4 +62,3 @@ u"""class Motor(Pins):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
         motorBackwardsPWM.ChangeDutyCycle(speed)"""
-from __future__ import absolute_import

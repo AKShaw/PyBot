@@ -1,11 +1,10 @@
-from __future__ import absolute_import
 from pins import Pins
 import time
 import RPi.GPIO as gpio
 
 class UltraSonic(Pins):
     def __init__(self, pins, type):
-        super(UltraSonic, self).__init__(pins, type)
+        super().__init__(pins, type)
 
     def sensor_detect(self):
         gpio.output(self.IO_pins[1], True)

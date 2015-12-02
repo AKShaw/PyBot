@@ -6,9 +6,9 @@ import time
 
 gpio.setmode(gpio.BOARD)
 
-right_sensor = UltraSonic((37, 35), u"sensor")     #37 is echo (in), 35 is trig (out)
-left_sensor = UltraSonic((38, 40), u"sensor")      #38 is echo (in), 40 trig (out)
-center_sensor = UltraSonic((8,8), u"sensor")       #8 is echo (in) and trig (out)    #untested
+right_sensor = UltraSonic((37, 35), "sensor")     #37 is echo (in), 35 is trig (out)
+left_sensor = UltraSonic((38, 40), "sensor")      #38 is echo (in), 40 trig (out)
+center_sensor = UltraSonic((8,8), "sensor")       #8 is echo (in) and trig (out)    #untested
 
 #get start distances before any operation.
 begin_right_distance = right_sensor.sensor_detect()
@@ -29,14 +29,13 @@ state = output_distances.check_start()
 #to this value, it could end up having not enough room to rotate for instance.
 
 # loop x amount
-u"""while True:
+"""while True:
     print("Left:" + str(left_sensor.sensor_detect()))
     print("Right: " + str(right_sensor.sensor_detect()))  # this would give me the distance for right sensor
     time.sleep(1)# this would give me the distance for left sensor"""
 
 #begin motor control stuff (working)
-from __future__ import absolute_import
-u"""rightMotor = Motor((24,26))
+"""rightMotor = Motor((24,26))
 print (rightMotor)
 leftMotor = Motor((21,19))
 print (leftMotor)
@@ -51,7 +50,7 @@ while True:
 
 #code below obtains 10 pulses of distance from both
 #ultrasonic sensors and stores the vals in an array (working)
-u"""right_list = []
+"""right_list = []
 left_list = []
 for i in range(0, 9):
     right_distance = right_sensor.sensor_detect()

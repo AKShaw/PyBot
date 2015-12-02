@@ -7,7 +7,7 @@ import time#
 gpio.setmode(gpio.BOARD)
 gpio.setwarnings(False)
 
-moveMotor = Motor((24,26, 21, 19), u"motor")
+moveMotor = Motor((24,26, 21, 19), "motor")
 
 moveMotor.moveLeftForward(100)
 moveMotor.moveRightForward(100)#sdf
@@ -18,7 +18,7 @@ moveMotor.moveRightForward(100)#sdf
 
 #code below obtains 10 pulses of distance from both
 #ultrasonic sensors and stores the vals in an array (working)
-u"""right_list = []
+"""right_list = []
 left_list = []
 for i in range(0, 9):
     right_distance = right_sensor.sensor_detect()
@@ -32,5 +32,4 @@ print(t)
 print(t1)"""
 #working
 
-from __future__ import absolute_import
 gpio.cleanup()
