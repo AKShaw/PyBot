@@ -29,16 +29,16 @@ class sgh_PCF8591P:
 
     # Constructor
     def __init__(self, busNum):
-        #print "init PCF8591"
+        ##print "init PCF8591"
         if busNum == 0:
             self.__bus = SMBus(0) # on a Rev 1 board
-            #print "bus 0"
+            ##print "bus 0"
         else:
             self.__bus = SMBus(1) # on a Rev 2 board
         self.__addr = self.__checkI2Caddress(0x48)
         self.__DACEnabled = 0x00
-        print self.readADC() # dummy call to raise exception if no chip presnt on the i2c bus
-        print "PCF8591 init completed"
+        #print self.readADC() # dummy call to raise exception if no chip presnt on the i2c bus
+        #print "PCF8591 init completed"
         
         # self.__bus = __i2cBus
         # self.__addr = self.__checkI2Caddress(__addr)
@@ -129,58 +129,58 @@ if __name__ == "__main__":
     try:
         sensor = PCF8591P()
     except Exception as e:
-        print "Passed:  missing parameters" + e.message
+        #print "Passed:  missing parameters" + e.message
     try:
         sensor = PCF8591P(i2c)
     except Exception as e:
-        print "Passed:  missing address parameter" + e.message
+        #print "Passed:  missing address parameter" + e.message
     try:
         sensor = PCF8591P(i2c, 'cheese')
     except I2CaddressOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
         sensor = PCF8591P(i2c, -1)
     except I2CaddressOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
         sensor = PCF8591P(i2c, 128)
     except I2CaddressOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
         sensor = PCF8591P(i2c, 0x48)
     except Exception as e:
-        print "Fail!!  Something went wrong!!" + e.message
+        #print "Fail!!  Something went wrong!!" + e.message
 
     try:
         sensor.readADC()
-        print "Passed:  default parameter"
+        #print "Passed:  default parameter"
     except PCF8591PchannelOutOfBoundsError as e:
-        print "Fail!!  Something went wrong!!" + e.message
+        #print "Fail!!  Something went wrong!!" + e.message
     try:
-        print sensor.readADC(-1)
+        #print sensor.readADC(-1)
     except PCF8591PchannelOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
-        print sensor.readADC(4)
+        #print sensor.readADC(4)
     except PCF8591PchannelOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
-        print sensor.readADC('cheese')
+        #print sensor.readADC('cheese')
     except PCF8591PchannelOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
 
     try:
         sensor.writeDAC('chesse')
     except PCF8591PDACvalueOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
         sensor.writeDAC(-1)
     except PCF8591PDACvalueOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     try:
         sensor.writeDAC(256)
     except PCF8591PDACvalueOutOfBoundsError as e:
-        print "Passed:  " + e.message
+        #print "Passed:  " + e.message
     
     sensor.writeDAC(255)
     sleep(1)
@@ -189,46 +189,46 @@ if __name__ == "__main__":
     sleep(1)
     
     reading = sensor.readADC(0)
-    print "0: {0}".format(reading)
+    #print "0: {0}".format(reading)
     reading = sensor.readADC(1)
-    print "1: {0}".format(reading)
+    #print "1: {0}".format(reading)
     reading = sensor.readADC(2)
-    print "2: {0}".format(reading)
+    #print "2: {0}".format(reading)
     reading = sensor.readADC(3)
-    print "3: {0}".format(reading)
+    #print "3: {0}".format(reading)
 
     reading = sensor.readAllADC()
-    print reading
+    #print reading
     
     sensor.enableDAC()
     sleep(1)
     
     reading = sensor.readADC(0)
-    print "0: {0}".format(reading)
+    #print "0: {0}".format(reading)
     reading = sensor.readADC(1)
-    print "1: {0}".format(reading)
+    #print "1: {0}".format(reading)
     reading = sensor.readADC(2)
-    print "2: {0}".format(reading)
+    #print "2: {0}".format(reading)
     reading = sensor.readADC(3)
-    print "3: {0}".format(reading)
+    #print "3: {0}".format(reading)
 
     reading = sensor.readAllADC()
-    print reading
+    #print reading
 
     sensor.disableDAC()
     sleep(1)
 
     reading = sensor.readADC(0)
-    print "0: {0}".format(reading)
+    #print "0: {0}".format(reading)
     reading = sensor.readADC(1)
-    print "1: {0}".format(reading)
+    #print "1: {0}".format(reading)
     reading = sensor.readADC(2)
-    print "2: {0}".format(reading)
+    #print "2: {0}".format(reading)
     reading = sensor.readADC(3)
-    print "3: {0}".format(reading)
+    #print "3: {0}".format(reading)
 
     reading = sensor.readAllADC()
-    print reading
+    #print reading
     
     
 
