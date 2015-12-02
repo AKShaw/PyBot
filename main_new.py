@@ -10,8 +10,8 @@ rightMotor = Motor((24,26), "motor")
 leftMotor = Motor((21,19), "motor")
 
 
-rightMotor.moveForward()
-leftMotor.moveForward()
+rightMotor.moveForward(100)
+leftMotor.moveForward(100)
 #end motor control stuff (working)
 
 # this is where we can repeat these and collect the statistics in an array or something
