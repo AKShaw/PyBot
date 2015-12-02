@@ -11,7 +11,7 @@ leftMotor = Motor((21,19), "motor")
 
 
 rightMotor.moveForward(100)
-leftMotor.moveForward(100)
+leftMotor.moveForward(100)#sdf
 #end motor control stuff (working)
 
 # this is where we can repeat these and collect the statistics in an array or something

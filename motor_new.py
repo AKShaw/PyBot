@@ -4,8 +4,8 @@ import RPi.GPIO as gpio
 #PIN2 = BACKWARD
 
 class Motor(Pins):
-    def __init__(self, pins, type):
-        super().__init__(pins, type)
+    def __init__(self, pins, pin_type):
+        super().__init__(pins, pin_type)
         global motorForwardsPWM
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
         global motorBackwardsPWM
