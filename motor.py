@@ -25,8 +25,10 @@ import RPi.GPIO as gpio
         motorBackwardsPWM.ChangeDutyCycle(speed)"""
 
 class Motor(Pins):
-    def __init__(self, pins):
+    def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
         super().__init__(pins, type)
+        self.motorForwardsPWM = motorForwardsPWM
+        self.motorBackwardsPWM = motorBackwardsPWM
 
     def moveForward(self, speed):
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
