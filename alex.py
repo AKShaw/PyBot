@@ -12,10 +12,10 @@ def leftMotorMethod():
         leftMotor.moveForward(100)
 
 
-def rightMotorMethod():
+"""def rightMotorMethod():
     rightMotor= Motor((21, 19), "motor")
     while True:
-        rightMotor.moveForward(100)
+        rightMotor.moveForward(100)"""
 
 lm = threading.Thread(target=leftMotorMethod())
 #rm = threading.Thread(target=rightMotorMethod())
