@@ -6,21 +6,21 @@ import time
 gpio.setmode(gpio.BOARD)
 
 
-def leftMotor():
+def leftMotorMethod():
     leftMotor = Motor((21, 19), "motor")
     while True:
         leftMotor.moveForward(100)
 
 
-def rightMotor():
+def rightMotorMethod():
     rightMotor= Motor((21, 19), "motor")
     while True:
         rightMotor.moveForward(100)
 
-lm = threading.Thread(target=leftMotor())
-rm = threading.Thread(target=rightMotor())
+lm = threading.Thread(target=leftMotorMethod())
+#rm = threading.Thread(target=rightMotorMethod())
 
 lm.start()
-rm.start()
+#rm.start()
 
 
