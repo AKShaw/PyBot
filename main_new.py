@@ -7,11 +7,10 @@ import time
 gpio.setmode(gpio.BOARD)
 gpio.setwarnings(False)
 
-rightMotor = Motor((24,26), "motor")
-leftMotor = Motor((21,19), "motor")
+moveMotor = Motor((24,26, 21, 19), "motor")
 
-rightMotor.moveForward(100)
-leftMotor.moveForward(100)#sdf
+moveMotor.moveLeftForward(100)
+moveMotor.moveRightForward(100)#sdf
 #end motor control stuff (working)
 
 # this is where we can repeat these and collect the statistics in an array or something

@@ -6,26 +6,41 @@ import RPi.GPIO as gpio
 class Motor(Pins):
     def __init__(self, pins, pin_type):
         super().__init__(pins, pin_type)
-        global motorForwardsPWM
+        """global motorForwardsPWM
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
         print("set")
         global motorBackwardsPWM
         motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
         print("set")
         motorForwardsPWM.start(0)
-        motorBackwardsPWM.start(0)
+        motorBackwardsPWM.start(0)"""
 
-    def moveForward(self, speed):
+    def moveLeftForward(self, speed):
+        motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
+        motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
+        motorForwardsPWM.start(0)
+        motorBackwardsPWM.start(0)
         print("start motor fowards")
         print(self.IO_pins[0], self.IO_pins[1])
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
         print("should have started")
 
-    def moveBackwards(self, speed):
+    def moveRightForward(self, speed):
+        motorForwardsPWM = gpio.PWM(self.IO_pins[2], 100)
+        motorBackwardsPWM = gpio.PWM(self.IO_pins[3], 100)
+        motorForwardsPWM.start(0)
+        motorBackwardsPWM.start(0)
+        print("start motor fowards")
+        print(self.IO_pins[0], self.IO_pins[1])
+        motorBackwardsPWM.ChangeDutyCycle(0)
+        motorForwardsPWM.ChangeDutyCycle(speed)
+        print("should have started")
+
+    """def moveBackwards(self, speed):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
-        motorBackwardsPWM.ChangeDutyCycle(speed) #ijii
+        motorBackwardsPWM.ChangeDutyCycle(speed)"""
 
 """class Motor(Pins):
     def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
