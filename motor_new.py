@@ -8,14 +8,18 @@ class Motor(Pins):
         super().__init__(pins, pin_type)
         global motorForwardsPWM
         motorForwardsPWM = gpio.PWM(self.IO_pins[0], 100)
+        print("set")
         global motorBackwardsPWM
         motorBackwardsPWM = gpio.PWM(self.IO_pins[1], 100)
+        print("set")
         motorForwardsPWM.start(0)
         motorBackwardsPWM.start(0)
 
     def moveForward(self, speed):
+        print("start motor fowards")
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
+        ("should have started")
 
     def moveBackwards(self, speed):
         print ("Moving backwards")
