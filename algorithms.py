@@ -23,7 +23,7 @@ class check_sensors():
     def check_start(self):
         if self.sensor_distance[2] < 0.15:
             if (self.sensor_distance[0,1] < 0.15) or (self.sensor_distance[0,1] > 0.45):
-                return "REV_CALC"
+                return "REV_ONE" #rev_one being to only reverse on wheel, opposite one to the sensor.
             elif (0.15 <= self.sensor_distance[0,1] <= 0.45):
                 return "REV"
         else:
