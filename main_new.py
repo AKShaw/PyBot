@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 from ussensor import UltraSonic
 from algorithms import *
-from motor import Motor
+from motor_new import Motor
 import time
 
 gpio.setmode(gpio.BOARD)
