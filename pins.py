@@ -9,5 +9,6 @@ class Pins(object):
         elif (type=="motor"):
             gpio.setup(self.IO_pins[0], gpio.OUT)   #io_pins[0] will be motor forward
             gpio.setup(self.IO_pins[1], gpio.OUT)   #io_pins[1] will be motor backward
+            print("pins set correctly")
         elif (type=="infrared"):
             gpio.setup(self.IO_pins[0], gpio.OUT)   #io_pins[0] is the only one required by infrared sensors.
