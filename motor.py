@@ -3,7 +3,7 @@ import RPi.GPIO as gpio
 #PIN1 = FORWARD
 #PIN2 = BACKWARD
 
-"""class Motor(Pins):
+class Motor(Pins):
     def __init__(self, pins):
         super().__init__(pins, type)
         global motorForwardsPWM
@@ -22,9 +22,9 @@ import RPi.GPIO as gpio
     def moveBackwards(self,speed):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
-        motorBackwardsPWM.ChangeDutyCycle(speed)"""
+        motorBackwardsPWM.ChangeDutyCycle(speed)
 
-class Motor(Pins):
+"""class Motor(Pins):
     def __init__(self, motorForwardsPWM, motorBackwardsPWM, pins, type):
         super().__init__(pins, type)
         self.motorForwardsPWM = motorForwardsPWM
@@ -43,4 +43,4 @@ class Motor(Pins):
     def moveBackwards(self,speed):
         print ("Moving backwards")
         motorForwardsPWM.ChangeDutyCycle(0)
-        motorBackwardsPWM.ChangeDutyCycle(speed)
+        motorBackwardsPWM.ChangeDutyCycle(speed)"""
