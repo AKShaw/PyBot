@@ -10,7 +10,6 @@ gpio.setwarnings(False)
 rightMotor = Motor((24,26), "motor")
 leftMotor = Motor((21,19), "motor")
 
-
 rightMotor.moveForward(100)
 leftMotor.moveForward(100)#sdf
 #end motor control stuff (working)

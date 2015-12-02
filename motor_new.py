@@ -17,6 +17,7 @@ class Motor(Pins):
 
     def moveForward(self, speed):
         print("start motor fowards")
+        print(self.IO_pins[0], self.IO_pins[1])
         motorBackwardsPWM.ChangeDutyCycle(0)
         motorForwardsPWM.ChangeDutyCycle(speed)
         print("should have started")
