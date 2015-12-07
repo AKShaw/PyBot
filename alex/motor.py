@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from alex_pins import Pins
-import RPi.gpio as gpio
+import RPi.GPIO as gpio
 from Adafruit_PWM_Servo_Driver import PWM
 from sgh_PCF8591P import sgh_PCF8591P
 #PIN1 = FORWARD
