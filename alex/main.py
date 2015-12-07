@@ -7,13 +7,13 @@ gpio.setmode(gpio.BOARD)
 
 motors = Motor()
 
-motors.moveForward(20)
+motors.moveForward(100)
 time.sleep(5)
-motors.moveBackward(20)
+motors.moveBackward(100)
 time.sleep(5)
-motors.spinForward(10,20)
+motors.spinForward(80,100)
 time.sleep(2.5)
-motors.spinForward(20,10)
+motors.spinForward(100,80)
 time.sleep(2.5)
 
 gpio.cleanup()
