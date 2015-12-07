@@ -13,7 +13,7 @@ class Motor():
         pi2go.forward(speed)
 
     def moveBackward(self, speed):
-        pi2go.backward(speed)
+        pi2go.reverse(speed)
 
     def spinForward(self, leftSpeed, rightSpeed):
         pi2go.turnForward(leftSpeed, rightSpeed)
