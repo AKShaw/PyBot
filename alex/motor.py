@@ -7,7 +7,7 @@ import pi2go
 
 class Motor():
     def __init__(self):
-        pass
+        pi2go.init()
 
     def moveForward(self, speed):
         pi2go.forward(speed)
