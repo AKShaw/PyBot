@@ -27,7 +27,7 @@ class Motor(Pins):
         L2.ChangeFrequency(speed+5)
         R2.ChangeFrequency(speed+5)
 
-    def moveBackwards(self,speed):
+    def moveBackward(self,speed):
         L1.ChangeDutyCycle(0)
         R1.ChangeDutyCycle(0)
         L2.ChangeDutyCycle(speed)
