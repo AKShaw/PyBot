@@ -1,5 +1,6 @@
 from pins import Pins
 import RPi.GPIO as gpio
+import time
 #PIN1 = FORWARD
 #PIN2 = BACKWARD
 
@@ -18,7 +19,7 @@ class Motor(Pins):
         R1.start(0)
         R2.start(0)
 
-    def moveForward(self, speed, time):
+    def moveForward(self, speed, moveTime):
         L1.ChangeDutyCycle(speed)
         R1.ChangeDutyCycle(speed)
         L2.ChangeDutyCycle(0)
@@ -27,9 +28,9 @@ class Motor(Pins):
         L2.ChangeFrequency(speed+5)
         R2.ChangeFrequency(speed+5)
 
-        time.sleep(int(time))
+        time.sleep(moveTime)
 
-    def moveBackward(self,speed, time):
+    def moveBackward(self,speed, moveTime):
         L1.ChangeDutyCycle(0)
         R1.ChangeDutyCycle(0)
         L2.ChangeDutyCycle(speed)
@@ -38,9 +39,9 @@ class Motor(Pins):
         L1.ChangeFrequency(speed+5)
         R1.ChangeFrequency(speed+5)
 
-        time.sleep(int(time))
+        time.sleep(moveTime)
 
-    def spinForward(self, leftSpeed, rightSpeed, time):
+    def spinForward(self, leftSpeed, rightSpeed, moveTime):
         L1.ChangeDutyCycle(leftSpeed)
         R1.ChangeDutyCycle(rightSpeed)
         L2.ChangeDutyCycle(0)
@@ -49,5 +50,5 @@ class Motor(Pins):
         L2.ChangeFrequency(leftSpeed+5)
         R2.ChangeFrequency(rightSpeed+5)
 
-        time.sleep(int(time))
+        time.sleep(moveTime)
 
