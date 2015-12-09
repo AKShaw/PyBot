@@ -42,6 +42,6 @@ class Motor(Pins):
         L2.ChangeDutyCycle(0)
         R2.ChangeDutyCycle(0)
 
-        L2.ChangeFrequency(speed+5)
-        R2.ChangeFrequency(speed+5)
+        L2.ChangeFrequency(leftSpeed+5)
+        R2.ChangeFrequency(rightSpeed+5)
 

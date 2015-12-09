@@ -11,8 +11,8 @@ motor.moveForward(100)
 time.sleep(3)
 motor.moveBackward(100)
 time.sleep(3)
-motor.spinForward(50, 100)
+motor.spinForward(80, 100)
 time.sleep(4)
-motor.spinForward(100, 50)
+motor.spinForward(100, 80)
 
 
