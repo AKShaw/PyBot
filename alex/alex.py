@@ -5,15 +5,15 @@ import time
 
 gpio.setmode(gpio.BOARD)
 
-motor = Motor((26,24,19,21), "motor")
+motors = Motor((26,24,19,21), "motor")
 
-motor.moveForward(100, 5)
+motors.moveForward(100, 3)
+motors.moveBackward(100, 3)
+motors.spinForward(0, 100, 3)
+motors.spinForward(100, 0, 3)
 
-motor.moveBackward(100, 5)
 
-motor.spinForward(0, 100, 4)
-
-motor.spinForward(100, 0, 4)
+gpio.cleanup()
 
 
 
