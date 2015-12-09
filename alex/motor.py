@@ -27,7 +27,7 @@ class Motor(Pins):
         L2.ChangeFrequency(speed+5)
         R2.ChangeFrequency(speed+5)
 
-        time.sleep(time)
+        time.sleep(int(time))
 
     def moveBackward(self,speed, time):
         L1.ChangeDutyCycle(0)
@@ -38,7 +38,7 @@ class Motor(Pins):
         L1.ChangeFrequency(speed+5)
         R1.ChangeFrequency(speed+5)
 
-        time.sleep(time)
+        time.sleep(int(time))
 
     def spinForward(self, leftSpeed, rightSpeed, time):
         L1.ChangeDutyCycle(leftSpeed)
@@ -49,5 +49,5 @@ class Motor(Pins):
         L2.ChangeFrequency(leftSpeed+5)
         R2.ChangeFrequency(rightSpeed+5)
 
-        time.sleep(time)
+        time.sleep(int(time))
 
