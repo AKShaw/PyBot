@@ -18,7 +18,7 @@ class Straighten:
         return motors
 
     def getTrackWidth(self):
-        motors.spinFoward(50, 50, 5)
+        motors.pivot("left", 50, 5)
         right_list = []
         left_list = []
         for i in range(0, 20):
@@ -29,7 +29,7 @@ class Straighten:
             time.sleep(0.25)
         x = min(right_list)
         y = min(left_list)
-        return x + y + 10
+        return x + y + 6
 
 
     def getTheta(self):
