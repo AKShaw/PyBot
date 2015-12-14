@@ -10,7 +10,7 @@ def setup():
     gpio.setmode(gpio.BOARD)
     global leftUS, rightUS, motors
     leftUS = UltraSonic((38,40), "sensor")
-    rightUS = UltraSonic((37,45), "sensor")
+    rightUS = UltraSonic((37,35), "sensor")
     motors = Motor((26,24,19,21), "motor")
 
 def start():
