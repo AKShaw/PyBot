@@ -31,7 +31,7 @@ class Straighten:
 
     def straighten(self):
         initTheta = self.getTheta()
-        time.sleep(1)
+        motors.moveForward(100, 1)
         newTheta = self.getTheta()
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
