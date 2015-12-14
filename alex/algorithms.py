@@ -15,7 +15,7 @@ class Straighten:
     def motors(self):
         return motors
 
-    def getTheta():
+    def getTheta(self):
         """GETS THE ROBOTS ANGLE"""
         leftDist = leftUS.sensor_detect()
         print("LEFT US: " + str(leftDist))
