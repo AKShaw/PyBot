@@ -16,8 +16,6 @@ def setup():
 def start():
     """ANGLES THE ROBOT MORE OR LESS STRAIGHT"""
     initTheta = getTheta()
-    print("LEFT US: " + str(leftUS.sensor_detect()))
-    print("RIGHT US: " + str(rightUS.sensor_detect()))
     motors.pivot("left", 20, 1) #spin left for 1 second
     newTheta = getTheta()
     #Checks if the robot is pointed even further of course or not, corrects for whichever
@@ -31,9 +29,12 @@ def start():
 def getTheta():
     """GETS THE ROBOTS ANGLE"""
     leftDist = leftUS.sensor_detect()
+    print("LEFT US: " + str(leftDist))
     rightDist = rightUS.sensor_detect()
+    print("RIGHT US: " + str(rightDist))
     #totalWidth (hypotenuse) = leftUS + rightUS + robotWidth
     totalWidth = leftDist + rightDist + 6
+    print (math.acos(100/totalWidth))
     return math.acos(100/totalWidth)
 
 
