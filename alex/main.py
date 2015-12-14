@@ -34,8 +34,8 @@ def getTheta():
     print("RIGHT US: " + str(rightDist))
     #totalWidth (hypotenuse) = leftUS + rightUS + robotWidth
     totalWidth = leftDist + rightDist + 6
-    print (math.acos(100/totalWidth))
     try:
+        print (math.acos(100/totalWidth))
         return math.acos(100/totalWidth)
     except ValueError:
         return 0
