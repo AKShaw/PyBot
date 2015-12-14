@@ -21,10 +21,10 @@ def start():
     #Checks if the robot is pointed even further of course or not, corrects for whichever
     if newTheta < initTheta:
         while getTheta() >=0.122:   #Spins while the robot is pointed more than 0.122 rads from straight
-            motors.spinForward("left",20, 1) #spin left for 1 second
+            motors.pivot("left",20, 1) #spin left for 1 second
     elif newTheta > initTheta:
         while getTheta() >= 0.122:
-            motors.spinForward("right", 20, 1) #spin right for 1 second
+            motors.pivot("right", 20, 1) #spin right for 1 second
 
 def getTheta():
     """GETS THE ROBOTS ANGLE"""
