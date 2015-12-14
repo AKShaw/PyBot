@@ -34,7 +34,7 @@ class Straighten:
 
     def getTheta(self):
         """GETS THE ROBOTS ANGLE"""
-        trackWidth = self.getTheta()
+        trackWidth = self.getTrackWidth()
         leftDist = leftUS.sensor_detect()
         print("LEFT US: " + str(leftDist))
         rightDist = rightUS.sensor_detect()
