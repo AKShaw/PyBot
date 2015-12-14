@@ -35,9 +35,13 @@ def getTheta():
     #totalWidth (hypotenuse) = leftUS + rightUS + robotWidth
     totalWidth = leftDist + rightDist + 6
     print (math.acos(100/totalWidth))
-    return math.acos(100/totalWidth)
+    try:
+        return math.acos(100/totalWidth)
+    except ValueError:
+        return 0
 
 
 setup()
 start()
+motors.moveForward(50, 4)
 gpio.cleanup()
