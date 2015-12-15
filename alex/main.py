@@ -1,5 +1,4 @@
 import RPi.GPIO as gpio
-from motor import Motor
 from algorithms import Straighten
 
 
