@@ -66,10 +66,10 @@ class Straighten:
         newTheta = self.getTheta(60)
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
-            while self.getTheta(60) >=0.1:   #Spins while the robot is pointed more than 0.122 rads from straight
+            while self.getTheta(60) >=0.122:   #Spins while the robot is pointed more than 0.122 rads from straight
                 motors.pivot("left",20, 1) #spin left for 0.25 second
         elif newTheta > initTheta:
-            while self.getTheta(60) >= 0.1:
+            while self.getTheta(60) >= 0.122:
                 motors.pivot("right", 20, 1) #spin right for 0.25 second
 
 
