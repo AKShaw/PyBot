@@ -11,7 +11,6 @@ class Straighten:
         leftUS = UltraSonic((38,40), "sensor")
         rightUS = UltraSonic((37,35), "sensor")
         motors = Motor((26,24,19,21), "motor")
-        self.trackWidth = trackWidth
 
     @property
     def motors(self):
@@ -67,9 +66,9 @@ class Straighten:
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
             while self.getTheta(trackWidth) >=0.1:   #Spins while the robot is pointed more than 0.122 rads from straight
-                motors.pivot("left",80, 0.25) #spin left for 1 second
+                motors.pivot("left",50, 0.25) #spin left for 0.25 second
         elif newTheta > initTheta:
             while self.getTheta(trackWidth) >= 0.1:
-                motors.pivot("right", 80, 0.25) #spin right for 1 second
+                motors.pivot("right", 50, 0.25) #spin right for 0.25 second
 
 
