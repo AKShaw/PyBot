@@ -16,7 +16,7 @@ class Straighten:
     def motors(self):
         return motors
 
-    def getTrackWidth(self):
+    """def getTrackWidth(self):
         motors.pivot("left", 50, 5)
         right_list = []
         left_list = []
@@ -28,7 +28,7 @@ class Straighten:
             time.sleep(0.25)
         x = min(right_list)
         y = min(left_list)
-        return x + y + 6
+        return x + y + 6"""
 
 
     def getTheta(self, trackWidth):
@@ -45,7 +45,7 @@ class Straighten:
         except ValueError:
             return 0
 
-    def straighten(self):
+    """def straighten(self):
         initTheta = self.getTheta(trackWidth)
         motors.moveForward(100, 1)
         newTheta = self.getTheta(trackWidth)
@@ -55,20 +55,21 @@ class Straighten:
                 motors.pivot("left",20, 1) #spin left for 1 second
         elif newTheta > initTheta:
             while self.getTheta(trackWidth) >= 0.122:
-                motors.pivot("right", 20, 1) #spin right for 1 second
+                motors.pivot("right", 20, 1) #spin right for 1 second"""
 
     def start(self):
         """ANGLES THE ROBOT MORE OR LESS STRAIGHT"""
-        trackWidth = self.getTrackWidth()
-        initTheta = self.getTheta(trackWidth)
+        #trackWidth = self.getTrackWidth()
+        #print(str(trackWidth))
+        initTheta = self.getTheta(60)
         motors.pivot("left", 80, 0.25) #spin left for 1 second
-        newTheta = self.getTheta(trackWidth)
+        newTheta = self.getTheta(60)
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
-            while self.getTheta(trackWidth) >=0.1:   #Spins while the robot is pointed more than 0.122 rads from straight
-                motors.pivot("left",50, 0.25) #spin left for 0.25 second
+            while self.getTheta(60) >=0.1:   #Spins while the robot is pointed more than 0.122 rads from straight
+                motors.pivot("left",20, 1) #spin left for 0.25 second
         elif newTheta > initTheta:
-            while self.getTheta(trackWidth) >= 0.1:
-                motors.pivot("right", 50, 0.25) #spin right for 0.25 second
+            while self.getTheta(60) >= 0.1:
+                motors.pivot("right", 20, 1) #spin right for 0.25 second
 
 
