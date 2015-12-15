@@ -62,7 +62,7 @@ class Straighten:
         #trackWidth = self.getTrackWidth()
         #print(str(trackWidth))
         initTheta = self.getTheta(60)
-        motors.pivot("left", 80, 0.25) #spin left for 1 second
+        motors.pivot("left", 20, 1) #spin left for 1 second
         newTheta = self.getTheta(60)
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
