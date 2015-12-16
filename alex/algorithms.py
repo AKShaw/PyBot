@@ -10,6 +10,7 @@ class Straighten:
         leftUS = UltraSonic((38, 40), "sensor")
         rightUS = UltraSonic((37, 35), "sensor")
 
+    global rads
     rads = 0.2
 
     @property
