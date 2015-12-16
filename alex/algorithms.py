@@ -15,7 +15,7 @@ class Straighten:
         return motors
 
     def getTrackWidth(self):
-        motors.pivot("left", 50, 2)
+        motors.pivot("left", 50, 1)
         width_list = []
         for i in range(0, 20):
             right_distance = rightUS.sensor_detect()
@@ -46,14 +46,14 @@ class Straighten:
         trackWidth = self.getTrackWidth()
         print(str(trackWidth))
         initTheta = self.getTheta(trackWidth)
-        motors.pivot("left", 20, 1) #spin left for 1 second
+        motors.pivot("left", 30, 1) #spin left for 1 second
         print("Moved")
         newTheta = self.getTheta(trackWidth)
         #Checks if the robot is pointed even further of course or not, corrects for whichever
         if newTheta < initTheta:
-            while self.getTheta(trackWidth) >=0.122:   #Spins while the robot is pointed more than 0.122 rads from straight
+            while self.getTheta(trackWidth) >=0.1:   #Spins while the robot is pointed more than 0.122 rads from straight
                 motors.pivot("left", 30, 1) #spin left for 0.25 second
         elif newTheta > initTheta:
-            while self.getTheta(trackWidth) >= 0.122:
+            while self.getTheta(trackWidth) >= 0.1:
                 motors.pivot("right", 30, 1) #spin right for 0.25 second
 
