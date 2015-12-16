@@ -1,10 +1,12 @@
 import RPi.GPIO as gpio
+from motor import Motor
+from ussensor import UltraSonic
 from algorithms import Straighten
 from ioclass import InputOutput
 
 
 gpio.setmode(gpio.BOARD)
-io = InputOutput()
+io = InputOutput(Motor((26, 24, 19, 21), "motor"), UltraSonic((38, 40), "sensor"), UltraSonic((37, 35), "sensor"))
 
 a = Straighten(io)
 a.start()

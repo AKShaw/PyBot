@@ -1,14 +1,13 @@
-from motor import Motor
-from ussensor import UltraSonic
 import time
 import math
 
 
 class InputOutput:
-    def __init__(self):
-        self.motors = Motor((26, 24, 19, 21), "motor")
-        self.leftUS = UltraSonic((38, 40), "sensor")
-        self.rightUS = UltraSonic((37, 35), "sensor")
+    def __init__(self, motors, leftUS, rightUS):
+        self.motors = motors
+        self.leftUS = leftUS
+        self.rightUS = rightUS
+
 
     @property
     def motors(self):
