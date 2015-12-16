@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 from algorithms import Straighten
-from io import InputOutput
+from ioclass import InputOutput
 
 
 gpio.setmode(gpio.BOARD)
