@@ -7,8 +7,6 @@ gpio.setmode(gpio.BOARD)
 
 a = Straighten()
 a.start()
-
-while True:
-    a.straighten()
+a.straighten()
 
 gpio.cleanup()
