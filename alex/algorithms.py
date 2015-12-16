@@ -18,7 +18,7 @@ class Straighten:
         return motors
 
     def getTrackWidth(self):
-        motors.pivot("left", 50, 1)
+        motors.pivot("left", 50, 0.5)
         width_list = []
         for i in range(0, 20):
             right_distance = rightUS.sensor_detect()
