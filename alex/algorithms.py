@@ -23,6 +23,7 @@ class Straighten:
             width_list.insert(i, right_distance+left_distance+6)
             time.sleep(0.25)
         return min(width_list)
+        print("FINISHED GETTING TRACK WIDTH")
 
     def getTheta(self, trackWidth):
         """GETS THE ROBOTS ANGLE"""
