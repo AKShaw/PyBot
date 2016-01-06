@@ -17,3 +17,4 @@ class Pins(object):
         elif (type=="infrared"):
             gpio.setup(self.IO_pins[0], gpio.OUT)   #io_pins[0] is the only one required by infrared sensors.
             print("Infrared senesor pins set")
+            #
