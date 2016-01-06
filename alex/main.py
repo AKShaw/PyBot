@@ -1,5 +1,4 @@
 import RPi.GPIO as gpio
-from subprocess import call
 from algorithms import Straighten
 
 
