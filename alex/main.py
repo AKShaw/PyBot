@@ -6,11 +6,7 @@ from algorithms import Straighten
 gpio.setmode(gpio.BOARD)
 
 a = Straighten()
-while True:
-    try:
-        a.start()
-    except KeyboardInterrupt:
-        break
+a.start()
 
 """while True:
     a.motors.moveForward(100, 2.5)
