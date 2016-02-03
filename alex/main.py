@@ -9,6 +9,5 @@ a.start()
 
 while True:
     a.straightenMove()
-    time.sleep(2)
 
 gpio.cleanup()
