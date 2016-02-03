@@ -8,7 +8,7 @@ a = Straighten()
 a.start()
 
 while True:
-    a.straighten()
+    a.straightenMove()
     time.sleep(2)
 
 gpio.cleanup()

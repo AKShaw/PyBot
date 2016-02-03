@@ -42,7 +42,7 @@ class Straighten:
         except ValueError:
             return 0
 
-    def straighten(self):
+    def straightenMove(self):
         initLeftUS = leftUS.sensor_detect()
         initRightUS = rightUS.sensor_detect()
         motors.moveForward(100, 1)
