@@ -53,7 +53,7 @@ class Straighten:
         elif (initLeftUS < newLeftUS and initRightUS > newRightUS):
             motors.spinForward(80, 100, 1)
         else:
-            motors.moveForwards(100, 1)
+            motors.moveForward(100, 1)
 
     def start(self):
         """ANGLES THE ROBOT MORE OR LESS STRAIGHT"""
