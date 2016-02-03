@@ -43,17 +43,17 @@ class Straighten:
             return 0
 
     def straighten(self):
-        while True:
-            initTheta = self.getTheta(trackWidth)
-            motors.moveForward(100, 0.25) #spin left for 1 second
-            newTheta = self.getTheta(trackWidth)
-            #Checks if the robot is pointed even further of course or not, corrects for whichever
-            if newTheta < initTheta:
-                while self.getTheta(trackWidth) >=rads:   #Spins while the robot is pointed more than 0.122 rads from straight
-                    motors.spinForward(80, 100, 0.25) #spin left for 0.25 second
-            elif newTheta > initTheta:
-                while self.getTheta(trackWidth) >= rads:
-                    motors.pivot(100, 80, 0.25) #spin right for 0.25 second
+        initLeftUS = leftUS.sensor_detect()
+        initRightUS = rightUS.sensor_detect()
+        motors.moveForward(100, 1)
+        newLeftUS = leftUS.sensor_detect()
+        newRightUS = rightUS.sensor_detect()
+        if (initLeftUS > newLeftUS and initRightUS < newRightUS):
+            motors.spinForward(100, 80, 1)
+        elif (initLeftUS < newLeftUS and initRightUS > newRightUS):
+            motors.spinForward(80, 100, 1)
+        else:
+            motors.moveForwards(100, 1)
 
     def start(self):
         """ANGLES THE ROBOT MORE OR LESS STRAIGHT"""
