@@ -18,6 +18,7 @@ class Straighten:
         return motors
 
     def getTrackWidth(self):
+        print("----------GETTING TRACK WIDTH----------")
         motors.pivot("left", 35, 0.25)
         width_list = []
         for i in range(0, 20):
@@ -61,14 +62,15 @@ class Straighten:
         global trackWidth
         trackWidth = self.getTrackWidth()
         print("track width = " + str(trackWidth))
+        time.sleep(2)
         initTheta = self.getTheta(trackWidth)
         motors.pivot("left", 30, 0.25) #spin left for 1 second
         print("Moved")
         newTheta = self.getTheta(trackWidth)
         #Checks if the robot is pointed even further of course or not, corrects for whichever
-        if newTheta < initTheta:
+        """if newTheta < initTheta:
             while self.getTheta(trackWidth) >=rads:   #Spins while the robot is pointed more than 0.122 rads from straight
                 motors.pivot("left", 30, 0.25) #spin left for 0.25 second
         elif newTheta > initTheta:
             while self.getTheta(trackWidth) >= rads:
-                motors.pivot("right", 30, 0.25) #spin right for 0.25 second
+                motors.pivot("right", 30, 0.25) #spin right for 0.25 second"""
