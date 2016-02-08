@@ -25,8 +25,9 @@ class Straighten:
             left_distance = leftUS.sensor_detect()
             width_list.insert(i, right_distance+left_distance+6)
             time.sleep(0.25)
-        return min(width_list)
+            print("input" + i + "done")
         print("FINISHED GETTING TRACK WIDTH")
+        return min(width_list)
 
     def getTheta(self, trackWidth):
         """GETS THE ROBOTS ANGLE"""
@@ -37,7 +38,7 @@ class Straighten:
         #totalWidth (hypotenuse) = leftUS + rightUS + robotWidth
         totalWidth = leftDist + rightDist + 6
         try:
-            print (math.acos(trackWidth/totalWidth))
+            print(math.acos(trackWidth/totalWidth))
             return math.acos(trackWidth/totalWidth)
         except ValueError:
             return 0
@@ -71,4 +72,3 @@ class Straighten:
         elif newTheta > initTheta:
             while self.getTheta(trackWidth) >= rads:
                 motors.pivot("right", 30, 0.25) #spin right for 0.25 second
-
