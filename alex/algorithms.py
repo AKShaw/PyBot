@@ -20,12 +20,12 @@ class Straighten:
     def getTrackWidth(self):
         motors.pivot("left", 50, 0.25)
         width_list = []
-        for i in range(0, 20):
+        for i in range(0, 40):
             right_distance = rightUS.sensor_detect()
             left_distance = leftUS.sensor_detect()
             width_list.insert(i, right_distance+left_distance+6)
-            time.sleep(0.25)
-            print("input" + str(i) + "done")
+            time.sleep(0.1225)
+            print("input " + str(i) + " received")
         print("FINISHED GETTING TRACK WIDTH")
         return min(width_list)
 
