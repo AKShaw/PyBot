@@ -25,7 +25,8 @@ class Straighten:
             right_distance = rightUS.sensor_detect()
             left_distance = leftUS.sensor_detect()
             width_list.insert(i, right_distance+left_distance+6)
-            time.sleep(0.064)
+            #time.sleep(0.064) this is the full rotation value
+            time.sleep(0.032)
             print("input " + str(i) + " received")
         print("----------FINISHED GETTING TRACK WIDTH----------")
         return min(width_list)
