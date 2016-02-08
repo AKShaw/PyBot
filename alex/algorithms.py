@@ -25,7 +25,7 @@ class Straighten:
             left_distance = leftUS.sensor_detect()
             width_list.insert(i, right_distance+left_distance+6)
             time.sleep(0.25)
-            print("input" + i + "done")
+            print("input" + str(i) + "done")
         print("FINISHED GETTING TRACK WIDTH")
         return min(width_list)
 
