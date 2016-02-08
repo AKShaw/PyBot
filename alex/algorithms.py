@@ -26,7 +26,7 @@ class Straighten:
             width_list.insert(i, right_distance+left_distance+6)
             time.sleep(0.064)
             print("input " + str(i) + " received")
-        print("FINISHED GETTING TRACK WIDTH")
+        print("----------FINISHED GETTING TRACK WIDTH----------")
         return min(width_list)
 
     def getTheta(self, trackWidth):
@@ -60,7 +60,7 @@ class Straighten:
         """ANGLES THE ROBOT MORE OR LESS STRAIGHT"""
         global trackWidth
         trackWidth = self.getTrackWidth()
-        print(str(trackWidth))
+        print("track width = " + str(trackWidth))
         initTheta = self.getTheta(trackWidth)
         motors.pivot("left", 30, 0.25) #spin left for 1 second
         print("Moved")
