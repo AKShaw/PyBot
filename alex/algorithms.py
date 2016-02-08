@@ -62,7 +62,7 @@ class Straighten:
         global trackWidth
         trackWidth = self.getTrackWidth()
         print("track width = " + str(trackWidth))
-        time.sleep(2)
+        motors.moveFoward(0,2)
         initTheta = self.getTheta(trackWidth)
         motors.pivot("left", 30, 0.25) #spin left for 1 second
         print("Moved")
