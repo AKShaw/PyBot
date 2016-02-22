@@ -15,6 +15,9 @@ def exitHandler():
     print("Exiting")
     gpio.cleanup()
 
-atexit.register(exitHandler)
+try:
+    atexit.register(exitHandler)
+except KeyboardInterrupt:
+    atexit.register(exitHandler)
 
 gpio.cleanup()
